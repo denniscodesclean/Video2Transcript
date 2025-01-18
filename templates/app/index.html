@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video to Transcript</title>
+</head>
+<body>
+    <h1>Enter YouTube Video URL to Generate Transcript</h1>
+    
+    <form method="POST">
+        <input type="text" name="video_url" placeholder="Enter video URL" required>
+        <button type="submit">Generate Transcript</button>
+    </form>
+
+    {% if transcript %}
+        <h2>Transcript:</h2>
+        <pre>{{ transcript }}</pre>
+    {% elif error %}
+        <h2>Error:</h2>
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>
